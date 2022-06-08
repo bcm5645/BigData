@@ -13,7 +13,7 @@ from datetime import datetime
 from pathlib import Path
 import os.path
 
-spark = SparkSession.builder.getOrCreate()
+spark = SparkSession.builder.config("spark.driver.memory", "32g").getOrCreate()
 print(str(datetime.now()) + ": Wczytanie danych o firmach")
 # ścieżka do spreparowanego zestawu danych o firmach
 path_to_file = "C:\\Users\\v460g\OneDrive - Politechnika Łódzka\\Big Data\Projekt\\Yelp\\yelp_academic_dataset_restaurant.json"
